@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Homepage from "./Homepage";
-import Detail from "./Detail";
-import Cart from "./Cart";
-import Orderlist from "./Orderlist";
-import Login from "./Login";
-import Register from "./Register";
+import Homepage from "../pages/Homepage";
+import Detail from "../pages/Detail";
+import Cart from "../pages/Cart";
+import Orderlist from "../pages/Orderlist";
+import Login from "../pages/Login";
 
 export class App extends Component {
   render() {
@@ -17,7 +16,6 @@ export class App extends Component {
           <Route path="/cart" element={<Cart />} />
           <Route path="/orderlist" element={<Orderlist />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
           <Route
             path="*"
             element={
