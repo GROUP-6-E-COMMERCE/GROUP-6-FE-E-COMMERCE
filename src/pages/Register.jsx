@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import axios from "axios";
+import LogoNav from "../assets/images/altanotebook.png";
 
 import Layout from "../components/Layout";
 
@@ -78,7 +79,7 @@ class Register extends Component {
         <div className="justify-center items-center h-full sm:flex">
           <img
             className="p-3 w-1/2 sm:w-1/3"
-            src="https://dynamic.brandcrowd.com/asset/logo/6014a37c-f213-4222-95a4-afa6fad0294b/logo-search-grid-1x?v=637872391521570000"
+            src={LogoNav}
             alt="Sunset in the mountains"
           />
           <form className="bg-white shadow-md rounded px-4 pt-6 pb-8 mb-4">
