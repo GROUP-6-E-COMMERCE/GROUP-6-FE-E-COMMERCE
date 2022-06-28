@@ -38,7 +38,7 @@ class Login extends Component {
     const { email, password } = this.state;
 
     return (
-      <div>
+      <Layout>
         <div className="justify-center items-center h-full sm:flex">
           <img
             className="p-3 w-1/2 sm:w-1/3"
@@ -83,7 +83,7 @@ class Login extends Component {
             </div>
           </form>
         </div>
-      </div>
+      </Layout>
     );
   }
 }

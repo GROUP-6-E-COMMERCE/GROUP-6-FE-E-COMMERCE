@@ -62,7 +62,7 @@ const Homepage = () => {
       <div class="text-end p-5">
         <a
           href=" "
-          className="justify-items-end inline-block px-3 py-2 font-semibold text-center text-yellow-500 transition-colors duration-200 transform bg-white rounded-md hover:bg-white"
+          className="inline-block px-3 py-2 font-semibold text-center border-2 border-yellow-500 text-yellow-500 transition-colors duration-200 transform bg-white rounded-md hover:bg-yellow-400 hover:text-white"
         >
           Load More
         </a>
