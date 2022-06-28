@@ -1,12 +1,13 @@
 import "./styles/App.css";
-import Register from "./pages/Register";
-import Header from "./components/Header";
+import Layout from "./components/Layout";
+import Login from "./pages/Login";
+import Homepage from "./pages/Homepage";
 
 const App = () => {
   return (
-    <div>
-      <Register></Register>
-    </div>
+    <Layout>
+      <Homepage></Homepage>
+    </Layout>
   );
 };
 
