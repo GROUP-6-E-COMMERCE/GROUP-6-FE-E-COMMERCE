@@ -130,7 +130,7 @@ class Register extends Component {
                 />
               </div>
               <Button
-                className="py-3"
+                className="py-3 w-50"
                 color="warning"
                 variant="contained"
                 // onClick={() => this.handleSubmit()}
