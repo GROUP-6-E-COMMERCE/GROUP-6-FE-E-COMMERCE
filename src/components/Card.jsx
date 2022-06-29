@@ -12,7 +12,7 @@ function Card() {
         <Link to="/detail">
           <figure>
             <img
-              src="https://api.lorem.space/image/shoes?w=400&h=225"
+              src="https://nzxt.com/assets/cms/34299/1626207059-starterpc3-white-2000x2000-hero.png?fit=crop&fm=jpg&h=1000&w=1000"
               alt="Shoes"
             />
           </figure>
