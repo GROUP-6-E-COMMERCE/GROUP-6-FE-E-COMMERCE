@@ -54,7 +54,7 @@ const Homepage = () => {
       <Header></Header>
       <Hero></Hero>
       <div className="text-center text-3xl font-bold p-5">List Product</div>
-      <div className="grid grid-flow-row auto-rows-max grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-flow-row auto-rows-max grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-5 gap-5">
         {state.data.map((item, index) => (
           <Card key={index} img={item.img} title={item.title} />
         ))}

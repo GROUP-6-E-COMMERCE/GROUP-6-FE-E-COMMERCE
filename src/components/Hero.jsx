@@ -5,7 +5,7 @@ function Hero() {
   return (
     <div className="h-1/2">
       <div className="bg-gray-200">
-        <div className="container  py-4 mx-auto lg:flex lg:h-128 lg:py-8 ">
+        <div className="container  py-4 mx-auto md:flex lg:h-128 lg:py-8 ">
           <div className="flex items-center justify-center flex-col  w-full lg:flex-row lg:w-1/2">
             <div className="max-w-lg">
               <h1 className="text-xl tracking-wide text-white  lg:text-3xl font-bold">
@@ -24,9 +24,9 @@ function Hero() {
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-center w-full mt-2 lg:h-72 lg:w-1/2">
+          <div className="flex items-center justify-center w-full mt-2  lg:h-72 lg:w-1/2">
             <img
-              className="object-cover w-auto max-w-2xl rounded-md lg:h-full"
+              className="object-cover w-auto rounded-md sm:w-96 lg:w-2xl"
               src={HeroImg}
               alt=" "
             />

@@ -2,25 +2,26 @@ import React from "react";
 
 function Card() {
   return (
-    <div className="px-20">
-      <div className="p-5 flex justify-between w-full bg-white">
-        <div className="">
+    <div className="text-sm px-10 md:px-20 ">
+      <div className="flex justify-between  w-full bg-white shadow-lg">
+        <div className="md:flex">
           <img
-            className="w-full"
+            className="w-full h-auto p-5"
             src="https://api.lorem.space/image/shoes?w=400&h=225"
             alt="Shoes"
           />
+          <div className="px-5 md:p-5 justify-self-start w-full">
+            <p className="font-bold">Asus latitude</p>
+            <p>Rp.4.500.000</p>
+          </div>
         </div>
-        <div className="p-5 text-xl justify-self-start">
-          <p className="font-bold">Asus latitude</p>
-          <p>Rp. 4.500.000</p>
-        </div>
+
         <div className="p-5">
           <div className=" card-actions justify-end text-center ">
             <div className="qty flex relative">
-              <div className="pr-5">Qty</div>
+              <div className="p-2">Qty</div>
               <select
-                className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                className="block appearance-none w-10 bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-state"
               >
                 <option>1</option>
@@ -37,7 +38,7 @@ function Card() {
                 </svg>
               </div>
             </div>
-            <div className="p-5">Subtotal Rp. 4.500.000</div>
+            <div className="p-5">Subtotal Rp.4.500.000</div>
             <div className="">
               <a
                 href=" "
