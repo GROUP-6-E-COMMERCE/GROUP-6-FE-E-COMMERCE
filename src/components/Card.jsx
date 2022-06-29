@@ -2,7 +2,7 @@ import React from "react";
 
 function Card() {
   return (
-    <div className="p-5">
+    <div className="">
       <div className="card p-5 max-w-md shadow-xl bg-gray-400 rounded-md">
         <figure>
           <img
