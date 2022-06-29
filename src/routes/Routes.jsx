@@ -7,6 +7,7 @@ import Orderlist from "../pages/Orderlist";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Profile from "../pages/Profile";
+import CreateProduct from "../pages/CreateProduct";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/createproduct" element={<CreateProduct />} />
         <Route
           path="*"
           element={
