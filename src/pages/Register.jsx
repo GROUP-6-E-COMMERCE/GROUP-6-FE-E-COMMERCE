@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -25,8 +25,8 @@ const Register = () => {
       .then((res) => {
         const { data } = res;
         //localStorage.setItem("userToken", JSON.stringify(data.data.token));
-        alert(data.message);
         navigate("/login", { replace: true });
+        alert(data.message);
       })
       .catch((err) => console.log(err));
   };

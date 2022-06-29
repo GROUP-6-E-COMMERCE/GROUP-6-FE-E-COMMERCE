@@ -42,7 +42,7 @@ function Card() {
             <div className="">
               <a
                 href=" "
-                className="inline-block px-3 py-2 font-semibold text-center border-2 border-yellow-500 text-yellow-500 transition-colors duration-200 transform bg-white rounded-md hover:bg-yellow-400 hover:text-white"
+                className="inline-block px-3 py-2 font-semibold text-center border-2 border-orange-500 text-orange-500 transition-colors duration-200 transform bg-white rounded-md hover:bg-orange-400 hover:text-white"
               >
                 Remove
               </a>
