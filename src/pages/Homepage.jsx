@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Card from "../components/Card";
 import Hero from "../components/Hero";
 import axios from "axios";
 const Homepage = (props) => {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchData();
@@ -41,7 +43,12 @@ const Homepage = (props) => {
       <div className="text-center text-3xl font-bold p-5">List Product</div>
       <div className="grid grid-flow-row auto-rows-max grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-5 gap-5">
         {data.map((item) => (
-          <Card itemid={item.id} nameitem={item.name} priceitem={item.price} />
+          <Card
+            itemid={item.id}
+            nameitem={item.name}
+            priceitem={item.price}
+            onClickItem={() => navigate(`detail/${item.id}`)}
+          />
         ))}
       </div>
       <div className="text-end p-5">

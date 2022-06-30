@@ -1,40 +1,8 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
 
 const CreateProduct = () => {
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState();
-  const [qty, setQty] = useState();
-  const [desc, setDesc] = useState("");
-  //const [image, setImage] = useState("");
-
-  const handleSave = () => {
-    axios({
-      method: "post",
-      url: "http://18.204.209.223/products",
-      data: {
-        name: name,
-        price: +price,
-        qty: +qty,
-        desc: desc,
-        //image: image,
-      },
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    })
-      .then((res) => {
-        const { data } = res;
-        console.log(data);
-        localStorage("products", JSON.stringify(data.data));
-        alert(data.message);
-      })
-      .catch((err) => console.log(err));
-  };
-
   return (
     <Layout>
       <Header></Header>
@@ -43,31 +11,33 @@ const CreateProduct = () => {
           <div className="w-full px-16 py-20 mt-6 overflow-hidden bg-white rounded-lg lg:max-w-4xl">
             <div className="mb-4">
               <h1 className="font-serif text-3xl font-bold underline decoration-gray-400">
-                Create Product
+                Edit Product
               </h1>
             </div>
+
             <div className="w-full px-6 py-4 bg-white rounded shadow-md ring-1 ring-gray-900/10">
-              <form onSubmit={(e) => handleSave(e)}>
+              <form method="POST" action="#">
                 <div>
                   <label
                     className="block text-sm font-bold text-gray-700"
-                    for="title"
+                    for="img"
                   >
-                    Image source
+                    image source
                   </label>
 
                   <input
                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                     type="text"
-                    name="product_name"
-                    placeholder=""
-                    //onChange={(e) => setImage(e.target.value)}
+                    name="image_source"
+                    placeholder="180"
+                    value="Image"
                   />
                 </div>
+
                 <div className="mt-4">
                   <label
                     className="block text-sm font-bold text-gray-700"
-                    for="title"
+                    for="name"
                   >
                     Product Name
                   </label>
@@ -75,49 +45,50 @@ const CreateProduct = () => {
                   <input
                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                     type="text"
-                    name="product_name"
-                    placeholder=""
-                    onChange={(e) => setName(e.target.value)}
+                    name="prdoduct_name"
+                    placeholder="180"
+                    value="Keyboard Dell"
                   />
                 </div>
 
                 <div className="mt-4">
                   <label
                     className="block text-sm font-bold text-gray-700"
-                    for="title"
+                    for="price"
                   >
                     Price
                   </label>
 
                   <input
                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                    type="number"
+                    type="text"
                     name="product_price"
-                    placeholder=""
-                    onChange={(e) => setPrice(e.target.value)}
+                    placeholder="180"
+                    value="Rp.400.000"
                   />
                 </div>
 
                 <div className="mt-4">
                   <label
                     className="block text-sm font-bold text-gray-700"
-                    for="title"
+                    for="quantity"
                   >
                     Quantity
                   </label>
+
                   <input
                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                    type="number"
-                    name="product_price"
-                    placeholder=""
-                    onChange={(e) => setQty(e.target.value)}
+                    type="text"
+                    name="Quantity"
+                    placeholder="180"
+                    value="Rp.400.000"
                   />
                 </div>
 
                 <div className="mt-4">
                   <label
                     className="block text-sm font-bold text-gray-700"
-                    for="password"
+                    for="description"
                   >
                     Description
                   </label>
@@ -125,18 +96,24 @@ const CreateProduct = () => {
                     name="description"
                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                     rows="4"
-                    placeholder=""
-                    type="text"
-                    onChange={(e) => setDesc(e.target.value)}
-                  ></textarea>
+                    placeholder="400"
+                  >
+                    lorem ipsum dolor sit amet, consectet
+                  </textarea>
                 </div>
 
                 <div className="flex items-center justify-start mt-4 gap-x-2">
                   <button
                     type="submit"
-                    className="px-6 py-2 text-sm font-semibold rounded-md shadow-md text-sky-100 bg-orange-500 hover:bg-orange-700 focus:outline-none focus:border-orange-900 focus:ring ring-gray-300"
+                    className="px-6 py-2 text-sm font-semibold rounded-md shadow-md text-sky-100 bg-orange-500 hover:bg-orange-700 focus:outline-none focus:border-gray-900 focus:ring ring-orange-300"
                   >
-                    Save
+                    Update
+                  </button>
+                  <button
+                    type="submit"
+                    className="px-6 py-2 text-sm font-semibold text-gray-100 bg-gray-400 rounded-md shadow-md hover:bg-gray-600 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300"
+                  >
+                    Cancel
                   </button>
                 </div>
               </form>
