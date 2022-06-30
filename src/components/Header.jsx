@@ -4,8 +4,12 @@ import { FaShoppingCart } from "react-icons/fa";
 import { CgFormatSlash } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import LogoNav from "../assets/images/altanotebook.png";
+import User from "./User";
 
 const Header = () => {
+  const loggedin = localStorage.getItem("token");
+  const loggedout = !loggedin;
+
   return (
     <div>
       <nav className="flex items-center justify-between flex-wrap bg-gray-700 p-6">
@@ -33,16 +37,18 @@ const Header = () => {
               Alta Notebook
             </Link>
           </div>
-          <div className="px-2">
-            <FaShoppingCart className="inline-block text-orange-500" />
-            <Link
-              to="/cart"
-              className="inline-block text-sm px-4 py-2 leading-none rounded text-white  hover:text-orange-500 mt-4 lg:mt-0"
-            >
-              Cart
-            </Link>
+          <div hidden={loggedout}>
+            <div className="px-2">
+              <FaShoppingCart className="inline-block text-orange-500" />
+              <Link
+                to="/cart"
+                className="inline-block text-sm px-4 py-2 leading-none rounded text-white  hover:text-orange-500 mt-4 lg:mt-0"
+              >
+                Cart
+              </Link>
+            </div>
           </div>
-          <div className="px-2">
+          <div hidden={loggedin} className="px-2">
             <FaUserAlt className="inline-block text-blue-400" />
             <Link
               to="/login"
@@ -57,6 +63,9 @@ const Header = () => {
             >
               Register
             </Link>
+          </div>
+          <div hidden={loggedout}>
+            <User></User>
           </div>
         </div>
       </nav>

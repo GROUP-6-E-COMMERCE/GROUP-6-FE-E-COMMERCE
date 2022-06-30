@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
+import { Link } from "react-router-dom";
 
 const Orderlist = () => {
   return (
@@ -165,22 +166,24 @@ const Orderlist = () => {
             Review Order<div className="flex flex-wrap -mx-3 "></div>
           </div>
           <div className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-            Total Quatity : 3
+            Total Quatity : 2
           </div>
           <div className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
             Shipping : Free
           </div>
           <div className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-            Total Price : Rp.4.500.000
+            Total Price : Rp.9.000.000
           </div>
         </form>
         <div className="text-end pb-5">
-          <button
-            type="button"
-            className="w-1/5 inline-block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform bg-orange-500 rounded-md hover:bg-orange-400"
-          >
-            Purchase
-          </button>
+          <Link to="/orderhistory">
+            <button
+              type="button"
+              className="w-1/5 inline-block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform bg-orange-500 rounded-md hover:bg-orange-400"
+            >
+              Purchase
+            </button>
+          </Link>
         </div>
       </div>
     </Layout>
