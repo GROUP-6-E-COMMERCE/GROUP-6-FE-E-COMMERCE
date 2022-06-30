@@ -19,7 +19,7 @@ const Login = () => {
       })
       .then((res) => {
         const { data } = res;
-        localStorage.setItem("userToken", JSON.stringify(data.data.token));
+        localStorage.setItem("token", data.data.token);
         alert(data.message);
         navigate("/", { replace: true });
       })

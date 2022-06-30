@@ -9,13 +9,14 @@ import Register from "../pages/Register";
 import ListProductPage from "../pages/ListProductPage";
 import Profile from "../pages/Profile";
 import CreateProduct from "../pages/CreateProduct";
+import EditProduct from "../pages/EditProduct";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route path="/detail/:detail_id" element={<Detail />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/orderlist" element={<Orderlist />} />
         <Route path="/login" element={<Login />} />

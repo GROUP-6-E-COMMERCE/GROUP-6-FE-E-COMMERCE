@@ -33,6 +33,7 @@ const Header = () => {
               Alta Notebook
             </Link>
           </div>
+
           <div className="px-2">
             <FaShoppingCart className="inline-block text-orange-500" />
             <Link
