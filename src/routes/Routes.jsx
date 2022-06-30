@@ -9,6 +9,7 @@ import Register from "../pages/Register";
 import ListProductPage from "../pages/ListProductPage";
 import Profile from "../pages/Profile";
 import CreateProduct from "../pages/CreateProduct";
+import OrderHistory from "../pages/OrderHistory";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/myproduct" element={<ListProductPage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/createproduct" element={<CreateProduct />} />
+        <Route path="/orderhistory" element={<OrderHistory />} />
         <Route
           path="*"
           element={

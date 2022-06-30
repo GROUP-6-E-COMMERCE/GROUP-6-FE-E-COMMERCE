@@ -19,7 +19,7 @@ const Login = () => {
       })
       .then((res) => {
         const { data } = res;
-        localStorage.setItem("userToken", JSON.stringify(data.data.token));
+        localStorage.setItem("token", data.data.token);
         alert(data.message);
         navigate("/", { replace: true });
       })
@@ -38,7 +38,7 @@ const Login = () => {
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <div className="flex flex-col justify-center h-full ">
             <div>Login</div>
-            <div className="py-3">
+            <div className="pt-3">
               <TextField
                 className="w-full bg-white"
                 id="input-email"
@@ -62,7 +62,7 @@ const Login = () => {
             </div>
             <Button
               color="warning"
-              className="w-1/2 py-3"
+              className="w-full py-3"
               variant="contained"
               onClick={(e) => handleSubmit(e)}
               disabled={email.length === 0 || password.length === 0}

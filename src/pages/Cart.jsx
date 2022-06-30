@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Header";
 import CartCard from "../components/CartCard";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
 
-const Cart = () => {
+const Cart = (props) => {
   const state = {
     data: [
       {
@@ -14,6 +14,28 @@ const Cart = () => {
         id: 2,
       },
     ],
+  };
+
+  const fetchData = () => {
+    localStorage.getItem("cart");
+    const cart = JSON.parse(localStorage.getItem("cart"));
+    console.log(cart);
+  };
+
+  const data = {
+    name: props.nameitem,
+    price: props.priceitem,
+    qty: 1,
+    id: props.itemid,
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData2 = () => {
+    localStorage.getItem("cart");
+    console.log(localStorage.getItem("cart"));
   };
 
   return (
