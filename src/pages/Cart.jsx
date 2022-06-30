@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Header";
 import CartCard from "../components/CartCard";
 import Layout from "../components/Layout";
+import { Link } from "react-router-dom";
 
-const Cart = () => {
+const Cart = (props) => {
   const state = {
     data: [
       {
@@ -13,6 +14,28 @@ const Cart = () => {
         id: 2,
       },
     ],
+  };
+
+  const fetchData = () => {
+    localStorage.getItem("cart");
+    const cart = JSON.parse(localStorage.getItem("cart"));
+    console.log(cart);
+  };
+
+  const data = {
+    name: props.nameitem,
+    price: props.priceitem,
+    qty: 1,
+    id: props.itemid,
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData2 = () => {
+    localStorage.getItem("cart");
+    console.log(localStorage.getItem("cart"));
   };
 
   return (
@@ -37,12 +60,14 @@ const Cart = () => {
             <p className="text-gray-700 text-base m-2">
               Total Price Rp 9.000.000-
             </p>
-            <button
-              type="button"
-              className="w-full inline-block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-400"
-            >
-              Order
-            </button>
+            <Link to="/orderlist">
+              <button
+                type="button"
+                className="w-full inline-block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform bg-orange-500 rounded-md hover:bg-orange-400"
+              >
+                Order
+              </button>
+            </Link>
           </div>
         </div>
       </div>

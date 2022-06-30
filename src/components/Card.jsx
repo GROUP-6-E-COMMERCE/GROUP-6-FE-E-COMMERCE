@@ -92,7 +92,7 @@ const Card = (props) => {
     <div className="">
       <div className="card p-5 max-w-md shadow-xl bg-gray-600 rounded-md">
         <Link to="/detail">
-          <figure onClick={props.onClickItem}>
+          <figure>
             <img
               src="https://nzxt.com/assets/cms/34299/1626207059-starterpc3-white-2000x2000-hero.png?fit=crop&fm=jpg&h=1000&w=1000"
               alt="Shoes"

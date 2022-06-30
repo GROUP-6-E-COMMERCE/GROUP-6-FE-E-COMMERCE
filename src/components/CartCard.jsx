@@ -1,17 +1,30 @@
 import React from "react";
 
-function Card() {
+function Card(props) {
+  const handleRemove = (id) => {
+    const temp = localStorage.getItem("cart");
+    if (temp) {
+      const tempData = JSON.parse(temp);
+      const find = tempData.find((data) => data.id === id);
+      if (find) {
+        const index = tempData.indexOf(find);
+        tempData.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(tempData));
+      }
+    }
+  };
+
   return (
     <div className="text-sm px-10 md:px-20 ">
       <div className="flex justify-between  w-full bg-white shadow-lg">
         <div className="md:flex">
           <img
             className="w-full h-auto p-5"
-            src="https://api.lorem.space/image/shoes?w=400&h=225"
+            src="https://images.tokopedia.net/img/cache/250-square/VqbcmM/2021/3/26/1d6b7a0f-9a52-419e-ac9b-09eb8b47ccf0.png"
             alt="Shoes"
           />
           <div className="px-5 md:p-5 justify-self-start w-full">
-            <p className="font-bold">Asus latitude</p>
+            <p className="font-bold">asus monitor</p>
             <p>Rp.4.500.000</p>
           </div>
         </div>
@@ -41,8 +54,9 @@ function Card() {
             <div className="p-5">Subtotal Rp.4.500.000</div>
             <div className="">
               <a
+                onClick={() => handleRemove(1)}
                 href=" "
-                className="inline-block px-3 py-2 font-semibold text-center border-2 border-yellow-500 text-yellow-500 transition-colors duration-200 transform bg-white rounded-md hover:bg-yellow-400 hover:text-white"
+                className="inline-block px-3 py-2 font-semibold text-center border-2 border-orange-500 text-orange-500 transition-colors duration-200 transform bg-white rounded-md hover:bg-orange-400 hover:text-white"
               >
                 Remove
               </a>
